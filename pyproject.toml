@@ -1,0 +1,34 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "tramway-battery-optimization"
+version = "0.1.0"
+description = "Bi-objective sizing and control optimization of onboard battery storage for a DC tramway."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "numpy>=1.24",
+    "matplotlib>=3.7",
+]
+
+[project.optional-dependencies]
+dev = [
+    "ruff>=0.4",
+    "jupyterlab>=4.0",
+    "ipykernel>=6.0",
+    "pytest>=8.0",
+    "mkdocs>=1.6,<2.0",
+    "mkdocs-material>=9,<10",
+    "mkdocstrings>=0.25,<1.1",
+    "mkdocstrings-python>=1.10,<2.0",
+    "pymdown-extensions>=10.0",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
